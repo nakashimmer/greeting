@@ -1,3 +1,4 @@
 # greeting
 
-https://github.com/nakashimmer/greeting
+
+https://nakashimmer.github.io/greeting/
