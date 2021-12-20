@@ -5,7 +5,7 @@
 		<link rel="icon" sizes="16x16" href="favicon.ico">
 		<meta name="viewport" content="width=1000">
 		<link href="https://fonts.googleapis.com/css2?family=Griffy&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-		<title>寅年ハッピーホリデー</title>
+		<title>寅年ハッピーホリデー2022</title>
 		<style>
 			* {
 				margin: 0;
@@ -19,15 +19,17 @@
 
 			.msg {
 				position: absolute;
-				width: 100%;
 				font-size: 80px;
+				width: calc(100% - 80px);
 				text-align: center;
 				z-index: 2;
 				font-family: 'Hachi Maru Pop', cursive;
 				text-shadow: 2px 2px 2px white;
 				font-weight: bold;
 				/*color:pink;*/
-				line-height: 3em;
+				line-height: 1.2em;
+				margin: 40px;
+				text-align: center;
 			}
 
 			.msg.m1 {
@@ -277,7 +279,20 @@
 				transform-origin: top;
 			}
 
-			/*アニメーション*/
+			#nakashima {
+				border-radius: 50%;
+				vertical-align: middle;
+				border: 3px solid pink;
+				width: 80px;
+				height: 80px;
+				background-size: cover;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			/*アニメーション====================*/
 			#wrap {
 				animation: wrapStory 10s ease-in-out 0s 1 normal both;
 			}
@@ -324,11 +339,11 @@
 
 			@keyframes footerFStory {
 				0% {
-					transform: rotate(30deg);
+					transform: rotate(40deg);
 				}
 
 				50% {
-					transform: rotate(60deg);
+					transform: rotate(50deg);
 				}
 			}
 
@@ -343,7 +358,7 @@
 				}
 
 				50% {
-					transform: rotate(-60deg);
+					transform: rotate(-50deg);
 				}
 			}
 
@@ -373,7 +388,6 @@
 
 			img {
 				height: 80px;
-				vertical-align: middle;
 			}
 
 			#tail {
@@ -385,11 +399,22 @@
 					transform: rotate(-80deg);
 				}
 			}
+
+			#nakashima {
+				animation: nakaStory 0.5s linear 11s infinite alternate both;
+			}
+
+			@keyframes nakaStory {
+				100% {
+					border: 3px solid transparent;
+				}
+			}
 		</style>
 	</head>
 	<body>
 		<div class="msg m1">はっぴーほりでー！</div>
-		<div class="msg m2">2022もよろしく！<a href="https://www.facebook.com/nakashimmer"><img src="fb.png"></a></div>
+		<div class="msg m2">2022もよろしく！<a href="https://www.facebook.com/nakashimmer"><img src="nakashima.png"
+					id="nakashima"></a></div>
 		<div id="wrap">
 			<div id="head">
 				<div class="inner">
