@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Google Analytics -->
+		<script src="/ga.js"></script>
 		<meta charset="utf-8">
 		<link rel="icon" sizes="16x16" href="favicon.ico">
 		<meta name="viewport" content="width=1000">
@@ -49,6 +51,41 @@
 				right: 0;
 				bottom: 0;
 				margin: auto;
+			}
+
+				#santaHat{
+				position: absolute;
+				background: linear-gradient(135deg,transparent 50%,red 50%);
+				top:-30px;
+				left:150px;
+				width:100px;
+				height:80px;
+				z-Index:1;
+			}
+			#santaHat::before{
+				content: "";
+				display:block;
+				width:20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow:0px 0px 3px 2px white;
+				position: absolute;
+				left:87px;
+				top:-10px;
+			}
+			#santaHat::after{
+				content: "";
+				display:block;
+				width:100px;
+				height: 20px;
+				background-color: white;
+				border-radius: 10px;
+				box-shadow:0px 0px 3px 2px white;
+				position: absolute;
+				left:10px;
+				top:70px;
+				transform:rotate(10deg);
 			}
 
 			#head,
@@ -409,6 +446,7 @@
 					border: 3px solid transparent;
 				}
 			}
+		
 		</style>
 	</head>
 	<body>
@@ -416,8 +454,10 @@
 		<div class="msg m2">2022もよろしく！<a href="https://www.facebook.com/nakashimmer"><img src="nakashima.png"
 					id="nakashima"></a></div>
 		<div id="wrap">
+			<div id="santaHat"></div>
 			<div id="head">
 				<div class="inner">
+				
 					<div class="ear l"></div>
 					<div class="ear r"></div>
 					<div class="eye l"></div>
