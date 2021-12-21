@@ -53,39 +53,41 @@
 				margin: auto;
 			}
 
-				#santaHat{
+			#santaHat {
 				position: absolute;
-				background: linear-gradient(135deg,transparent 50%,red 50%);
-				top:-30px;
-				left:150px;
-				width:100px;
-				height:80px;
-				z-Index:1;
+				background: linear-gradient(135deg, transparent 50%, red 50%);
+				top: -30px;
+				left: 150px;
+				width: 100px;
+				height: 80px;
+				z-Index: 1;
 			}
-			#santaHat::before{
+
+			#santaHat::before {
 				content: "";
-				display:block;
-				width:20px;
+				display: block;
+				width: 20px;
 				height: 20px;
 				background-color: white;
 				border-radius: 50%;
-				box-shadow:0px 0px 3px 2px white;
+				box-shadow: 0px 0px 3px 2px white;
 				position: absolute;
-				left:87px;
-				top:-10px;
+				left: 87px;
+				top: -10px;
 			}
-			#santaHat::after{
+
+			#santaHat::after {
 				content: "";
-				display:block;
-				width:100px;
+				display: block;
+				width: 100px;
 				height: 20px;
 				background-color: white;
 				border-radius: 10px;
-				box-shadow:0px 0px 3px 2px white;
+				box-shadow: 0px 0px 3px 2px white;
 				position: absolute;
-				left:10px;
-				top:70px;
-				transform:rotate(10deg);
+				left: 10px;
+				top: 70px;
+				transform: rotate(10deg);
 			}
 
 			#head,
@@ -357,7 +359,7 @@
 
 				70%,
 				75% {
-					transform: translateX(calc(50vw - 100px)) scale(1, 1);
+					transform: translateX(calc(50vw - 50px)) scale(1, 1);
 				}
 
 				80% {
@@ -371,7 +373,13 @@
 
 			.footer.f1,
 			.footer.f2 {
-				animation: footerFStory 0.25s linear 0s 40 alternate both;
+				animation-duration: 0.25s;
+				animation-timing-function: linear;
+				animation-direction: alternate;
+				animation-fill-mode: both;
+				animation:
+					footerFStory 0.25s 0s 20,
+					footerFStory 0.25s 7s 12;
 			}
 
 			@keyframes footerFStory {
@@ -446,7 +454,6 @@
 					border: 3px solid transparent;
 				}
 			}
-		
 		</style>
 	</head>
 	<body>
@@ -457,7 +464,6 @@
 			<div id="santaHat"></div>
 			<div id="head">
 				<div class="inner">
-				
 					<div class="ear l"></div>
 					<div class="ear r"></div>
 					<div class="eye l"></div>
