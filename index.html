@@ -471,7 +471,7 @@
 	</head>
 	<body>
 		<div class="msg m1">はっぴーほりでー！</div>
-		<div class="msg m2">2022もよろしく！<a href="https://www.facebook.com/nakashimmer"><img src="nakashima.png"
+		<div class="msg m2"><span id="msg2">2022もよろしく！</span><a href="https://www.facebook.com/nakashimmer"><img src="nakashima.png"
 					id="nakashima"></a></div>
 		<div id="wrap">
 			<div id="Toppong"></div>
@@ -503,6 +503,17 @@
 			<div class="footer b2"></div>
 			<div id="tail"></div>
 		</div>
-		</div>
+		<script>
+			setInterval(() => {
+				const now = new Date();
+				let toshikoshi = new Date('2022-01-01 00:00:00');
+				let diff = Math.floor((toshikoshi.getTime() - now.getTime()) / 1000);
+				console.log(toshikoshi);
+				const msg2 = document.getElementById("msg2");
+				if (diff >= 0) {
+					msg2.innerHTML = "来年まで" + diff.toLocaleString() + "分!";
+				}
+			}, 1000);
+		</script>
 	</body>
 </html>
