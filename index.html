@@ -469,7 +469,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body id="body">
 		<div class="msg m1">はっぴーほりでー！</div>
 		<div class="msg m2"><span id="msg2">2022もよろしく！</span><a href="https://www.facebook.com/nakashimmer"><img
 					src="nakashima.png" id="nakashima"></a></div>
@@ -503,7 +503,10 @@
 			<div class="footer b2"></div>
 			<div id="tail"></div>
 		</div>
-		<script>/*
+		<script>
+			var vh = window.innerHeight;
+			document.getElementById('body').style.height = vh + 'px';
+		/*
 			setTimeout(loop, 9000);
 			function loop() {
 				setInterval(() => {
