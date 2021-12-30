@@ -5,8 +5,7 @@
 		<script src="ga.js"></script>
 		<meta charset="utf-8">
 		<!-- 検索エンジン対策 -->
-		<meta name="description"
-			content="寅年グリーティングカード：CSSアニメーション">
+		<meta name="description" content="寅年グリーティングカード：CSSアニメーション">
 		<!-- オープングラフ対策 -->
 		<meta property="og:title" content="ハッピーホリデー2022!🐯">
 		<meta property="og:type" content="website">
@@ -27,9 +26,9 @@
 			}
 
 			body {
-				background: linear-gradient(skyblue 60%,white);
+				background: linear-gradient(skyblue 60%, white);
 				overflow: hidden;
-				height:100vh;
+				height: 100vh;
 			}
 
 			.msg {
@@ -64,7 +63,7 @@
 				right: 0;
 				bottom: 0;
 				margin: auto;
-				-webkit-box-reflect: below 10px linear-gradient(transparent,white);
+				-webkit-box-reflect: below 10px linear-gradient(transparent, white);
 			}
 
 			#Toppong {
@@ -220,7 +219,7 @@
 				left: -10px;
 				top: 110px;
 				transform: rotate(-20deg);
-				background: linear-gradient(130deg,transparent 41%,black 42%);
+				background: linear-gradient(130deg, transparent 41%, black 42%);
 			}
 
 			.stripe.l2 {
@@ -237,7 +236,7 @@
 				right: -10px;
 				top: 110px;
 				transform: rotate(20deg);
-				background: linear-gradient(-130deg,transparent 41%,black 42%);
+				background: linear-gradient(-130deg, transparent 41%, black 42%);
 			}
 
 			.stripe.r2 {
@@ -439,6 +438,7 @@
 				0% {
 					transform: scaleY(1);
 				}
+
 				100% {
 					transform: scaleY(0);
 				}
@@ -471,8 +471,8 @@
 	</head>
 	<body>
 		<div class="msg m1">はっぴーほりでー！</div>
-		<div class="msg m2"><span id="msg2">2022もよろしく！</span><a href="https://www.facebook.com/nakashimmer"><img src="nakashima.png"
-					id="nakashima"></a></div>
+		<div class="msg m2"><span id="msg2">2022もよろしく！</span><a href="https://www.facebook.com/nakashimmer"><img
+					src="nakashima.png" id="nakashima"></a></div>
 		<div id="wrap">
 			<div id="Toppong"></div>
 			<div id="head">
@@ -504,16 +504,19 @@
 			<div id="tail"></div>
 		</div>
 		<script>
-			setInterval(() => {
-				const now = new Date();
-				let toshikoshi = new Date(2022,00,01,00,00,00);
-				let diff = Math.floor((toshikoshi.getTime() - now.getTime()) / 1000);
-				
-				const msg2 = document.getElementById("msg2");
-				if (diff >= 0) {
-					msg2.innerHTML = "来年まで" + diff.toLocaleString() + "分!";
-				}
-			}, 1000);
+			setTimeout(loop, 9000);
+			function loop() {
+				setInterval(() => {
+					const now = new Date();
+					let toshikoshi = new Date(2022, 00, 01, 00, 00, 00);
+					let diff = Math.floor((toshikoshi.getTime() - now.getTime()) / 1000);
+
+					const msg2 = document.getElementById("msg2");
+					if (diff >= 0) {
+						msg2.innerHTML = "来年まで" + diff.toLocaleString() + "分!";
+					}
+				}, 1000);
+			}
 		</script>
 	</body>
 </html>
