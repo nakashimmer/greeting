@@ -24,10 +24,11 @@
 				padding: 0;
 			}
 
-			body {
+			#inner {
 				background: linear-gradient(skyblue 60%, white);
 				overflow: hidden;
 				height: 100vh;
+width:100vh;
 				position: relative;
 			}
 
@@ -473,6 +474,7 @@
 		</style>
 	</head>
 	<body>
+<div id="inner">
 		<div class="msg m1">はっぴーほりでー！</div>
 		<div class="msg m2"><span id="msg2">2022もよろしく！</span><br><a
 				href="https://www.facebook.com/nakashimmer"><img src="nakashima.png" id="nakashima"></a>
@@ -507,6 +509,7 @@
 			<div class="footer b2"></div>
 			<div id="tail"></div>
 		</div>
+</div>
 		<script>
 			setTimeout(cd,9000);
 			function cd(){
