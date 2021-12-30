@@ -28,29 +28,37 @@
 				background: linear-gradient(skyblue 60%, white);
 				overflow: hidden;
 				height: 100vh;
+				position: relative;
 			}
 
 			.msg {
 				position: absolute;
+				top: 0;left:0;right:0;bottom:0;
+				margin: auto;
 				font-size: 80px;
 				width: calc(100% - 80px);
+				height:100px;
 				text-align: center;
 				z-index: 2;
 				font-family: 'Hachi Maru Pop', cursive;
-				text-shadow: 2px 2px 2px white;
+				text-shadow: 
+					2px 2px 2px white,
+					-2px -2px 2px white,
+					2px -2px 2px white,
+					-2px 2px 2px white;
+				;
 				font-weight: bold;
 				/*color:pink;*/
 				line-height: 1.2em;
-				margin: 40px;
 				text-align: center;
 			}
 
 			.msg.m1 {
-				top: 0;
+				transform: translateY(-30vh);
 			}
 
 			.msg.m2 {
-				bottom: 0;
+				transform: translateY(30vh);
 			}
 
 			#wrap {
@@ -62,7 +70,7 @@
 				right: 0;
 				bottom: 0;
 				margin: auto;
-				-webkit-box-reflect: below 10px linear-gradient(transparent, white);
+			/*	-webkit-box-reflect: below 10px linear-gradient(transparent, white);*/
 			}
 
 			#Topping {
