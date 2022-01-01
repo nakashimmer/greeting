@@ -31,6 +31,11 @@
 				width: 100vw;
 				position: relative;
 			}
+			#inner h1{
+				font-size:25vw;
+				color:red;
+				font-family:serif;
+			}
 
 			.msg {
 				position: absolute;
@@ -128,12 +133,13 @@
 				margin: 50px 0 0 0;
 			}
 
-			.inner {
+			#head .inner {
 				overflow: hidden;
 				background-image:
 					radial-gradient(circle at 25% 0%, yellow 50%, transparent 50%),
 					radial-gradient(circle at 75% 0%, yellow 50%, white 50%);
 			}
+			.inner h1{font-size:300px;}
 
 			#head:before,
 			#head:after {
@@ -359,6 +365,8 @@
 				text-decoration: none;
 			}
 
+			
+
 			/*アニメーション====================*/
 			#wrap {
 				animation: wrapStory 10s ease-in-out 1s 1 normal both;
@@ -479,7 +487,7 @@
 		</style>
 	</head>
 	<body>
-		<div id="inner">
+		<div id="inner"><h1>謹賀新年</h1>
 			<div class="msg m1">はっぴーほりでー！</div>
 			<div class="msg m2"><span id="msg2">2022もよろしく！</span><br><a href="https://www.facebook.com/nakashimmer"><img
 						src="nakashima.png" id="nakashima"></a>
