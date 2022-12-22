@@ -75,6 +75,7 @@
 				width: 300px;
 				height: 400px;
 				animation: story 5s 1 1s both;
+				transition: all 1s ease-in-out 1s;
 			}
 
 			@keyframes story {
@@ -281,8 +282,29 @@
 				position: absolute;
 				bottom: 10px;
 				right: 10px;
+				color: white;
 			}
-			footer a{text-decoration: none ;color:white;}
+
+			footer a {
+				text-decoration: none;
+				color: white;
+			}
+
+			.click {
+				position: absolute;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				z-index: 5;
+			}
+
+			#clickLeft {
+				left: 0;
+			}
+
+			#clickRight {
+				right: 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -306,15 +328,22 @@
 					<div class="foot right"></div>
 				</div>
 			</div>
+			<div class="click" id="clickLeft"></div>
+			<div class="click" id="clickRight"></div>
 		</div>
-		<footer><small><a target="_blank" href="https://www.facebook.com/NakashimaShunji/">なかしまぁ先生</a></small></footer>
+		<footer>From:<small><a target="_blank" href="https://www.facebook.com/NakashimaShunji/">なかしまぁ先生</a></small></footer>
 		<script>
-			const inner = document.getElementById('inner');
-			let xx = 0;
-			inner.addEventListener('click', () => {
-				let x = (Math.floor(Math.random() * 2)*2 - 1) * 50 + xx;
-				inner.style.transform = 'translateX(' + x + 'px)';
-				xx = x;
+			const rabbit = document.getElementById('rabbit');
+			const clickLeft = document.getElementById('clickLeft');
+			const clickRight = document.getElementById('clickRight');
+			let x = 0;
+			clickLeft.addEventListener('click', () => {
+				x -= 10;
+				rabbit.style.transform = 'translateX(' + x + 'px)';
+			});
+			clickRight.addEventListener('click', () => {
+				x += 10;
+				rabbit.style.transform = 'translateX(' + x + 'px)';
 			});
 		</script>
 		<script>
