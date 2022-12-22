@@ -13,14 +13,7 @@
 				padding: 0;
 			}
 
-			html {
-				height: -webkit-fill-available;
-			}
-
-			body {
-				min-height: 100vh;
-				min-height: -webkit-fill-available;
-			}
+	
 
 			::-webkit-scrollbar {
 				display: none;
@@ -59,6 +52,11 @@
 				100% {
 					color: yellow;
 				}
+			}
+
+			#screen {
+				min-height: 100vh; /* Fallback */
+				min-height: calc(var(--vh, 1vh) * 100);
 			}
 
 			#rabbit {
@@ -306,6 +304,18 @@
 				inner.style.transform = 'rotate(' + r + 'deg)';
 				rr = r;
 			});
+		</script>
+		<script>
+			const setFillHeight = () => {
+					const vh = window.innerHeight * 0.01;
+					document.documentElement.style.setProperty('--vh', `${vh}px`);
+				}
+
+				// 画面のサイズ変動があった時に高さを再計算する
+				window.addEventListener('resize', setFillHeight);
+
+				// 初期化
+				setFillHeight();
 		</script>
 	</body>
 </html>
