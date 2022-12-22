@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		
 		<title>2023 Happy New Year</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +11,6 @@
 				margin: 0;
 				padding: 0;
 			}
-
-	
 
 			::-webkit-scrollbar {
 				display: none;
@@ -62,7 +59,8 @@
 			}
 
 			#screen {
-				min-height: 100vh; /* Fallback */
+				min-height: 100vh;
+				/* Fallback */
 				min-height: calc(var(--vh, 1vh) * 100);
 			}
 
@@ -106,7 +104,6 @@
 				width: 100%;
 				height: 100%;
 				transition: all 0.5s ease-in-out;
-				
 			}
 
 			#head {
@@ -279,10 +276,17 @@
 					transform: rotate(-90deg);
 				}
 			}
+
+			footer {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+			}
+			footer a{text-decoration: none ;color:white;}
 		</style>
 	</head>
 	<body>
-		<div id="screen">2023 あけまして<br><br>おめでとうございます!</div>
+		<div id="screen"> 2023 あけまして<br> 🎍⛩️🍱🦐🍣🍥🍶🍾㊗🗻🦅🍆<br> おめでとうございます!</div>
 		<div id="rabbit">
 			<div id="inner">
 				<div id="head">
@@ -303,26 +307,27 @@
 				</div>
 			</div>
 		</div>
+		<footer><small><a target="_blank" href="https://www.facebook.com/NakashimaShunji/">なかしまぁ先生</a></small></footer>
 		<script>
 			const inner = document.getElementById('inner');
-			let rr = 0;
+			let xx = 0;
 			inner.addEventListener('click', () => {
-				let r = (Math.floor(Math.random() * 8) - 4) * 45 + rr;
-				inner.style.transform = 'rotate(' + r + 'deg)';
-				rr = r;
+				let x = (Math.floor(Math.random() * 2)*2 - 1) * 50 + xx;
+				inner.style.transform = 'translateX(' + x + 'px)';
+				xx = x;
 			});
 		</script>
 		<script>
 			const setFillHeight = () => {
-					const vh = window.innerHeight * 0.01;
-					document.documentElement.style.setProperty('--vh', `${vh}px`);
-				}
+				const vh = window.innerHeight * 0.01;
+				document.documentElement.style.setProperty('--vh', `${vh}px`);
+			}
 
-				// 画面のサイズ変動があった時に高さを再計算する
-				window.addEventListener('resize', setFillHeight);
+			// 画面のサイズ変動があった時に高さを再計算する
+			window.addEventListener('resize', setFillHeight);
 
-				// 初期化
-				setFillHeight();
+			// 初期化
+			setFillHeight();
 		</script>
 	</body>
 </html>
