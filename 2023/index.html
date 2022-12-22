@@ -74,8 +74,8 @@
 				border-color: red;
 				width: 300px;
 				height: 400px;
-				animation: story 5s 1 1s both;
-				transition: all 1s ease-in-out 1s;
+				animation: story 5s 1 1s;
+				transition: transform 0.5s ease-in-out;
 			}
 
 			@keyframes story {
@@ -338,11 +338,11 @@
 			const clickRight = document.getElementById('clickRight');
 			let x = 0;
 			clickLeft.addEventListener('click', () => {
-				x -= 10;
+				x -= 30;
 				rabbit.style.transform = 'translateX(' + x + 'px)';
 			});
 			clickRight.addEventListener('click', () => {
-				x += 10;
+				x += 30;
 				rabbit.style.transform = 'translateX(' + x + 'px)';
 			});
 		</script>
