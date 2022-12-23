@@ -326,15 +326,19 @@
 			let dx = -1;
 			const hny=new Audio();
 			hny.src="hny.mp3";
+			hny.playbackRate=3;
 			rabbit.addEventListener('click', () => {
+				hny.pause();
+				hny.currentTime = 0;
+				hny.play();
 				if (dx === 1) {
 					rabbit.style.transform = "translateX(80%) rotate(360deg)";
 					dx = -1;
-					hny.play();
 				}
 				else {
 					rabbit.style.transform = "translateX(-80%) rotate(-360deg)";
 					dx = 1;
+
 				}
 			});
 
