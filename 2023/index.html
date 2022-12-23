@@ -324,18 +324,21 @@
 		<script>
 			const rabbit = document.getElementById('rabbit');
 			let dx = 0.5;
-			const hny=new Audio();
-			hny.src="hny.mp3";
-			hny.playbackRate=1;
-			const str=["translateX(80%) rotate(360deg)", "translateX(-80%) rotate(-360deg)"]
+			const hny = new Audio();
+			hny.src = "hny.mp3";
+			hny.playbackRate = 1;
+			const str = [
+				"translateX(80%) rotate(360deg)", 
+				"translateX(-80%) rotate(-360deg)"
+			];
 			rabbit.addEventListener('click', () => {
 				//hny.pause();
 				hny.currentTime = 0;
 				hny.play();
-				
-				rabbit.style.transform = str[dx+0.5];
+
+				rabbit.style.transform = str[dx + 0.5];
 				dx *= -1;
-				
+
 			});
 
 		</script>
