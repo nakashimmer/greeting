@@ -10,7 +10,7 @@
 			* {
 				margin: 0;
 				padding: 0;
-				-webkit-tap-highlight-color:rgba(0,0,0,0);
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			}
 
 			*:focus {
@@ -296,22 +296,6 @@
 				text-decoration: none;
 				color: white;
 			}
-
-			.click {
-				position: absolute;
-				top: 0;
-				width: 50%;
-				height: 100%;
-				z-index: 5;
-			}
-
-			#clickLeft {
-				left: 0;
-			}
-
-			#clickRight {
-				right: 0;
-			}
 		</style>
 	</head>
 	<body>
@@ -335,23 +319,25 @@
 					<div class="foot right"></div>
 				</div>
 			</div>
-			<div class="click" id="clickLeft"></div>
-			<div class="click" id="clickRight"></div>
 		</div>
 		<footer>From:<small><a target="_blank" href="https://www.facebook.com/NakashimaShunji/">なかしまぁ先生</a></small></footer>
 		<script>
 			const rabbit = document.getElementById('rabbit');
-			const clickLeft = document.getElementById('clickLeft');
-			const clickRight = document.getElementById('clickRight');
-			let x = 0;
-			clickLeft.addEventListener('click', () => {
-				x -= 30;
-				rabbit.style.transform = 'translateX(-80%) rotate(-360deg)';
+			let dx = -1;
+			const hny=new Audio();
+			hny.src="hny.mp3";
+			rabbit.addEventListener('click', () => {
+				if (dx === 1) {
+					rabbit.style.transform = "translateX(80%) rotate(360deg)";
+					dx = -1;
+					hny.play();
+				}
+				else {
+					rabbit.style.transform = "translateX(-80%) rotate(-360deg)";
+					dx = 1;
+				}
 			});
-			clickRight.addEventListener('click', () => {
-				x += 30;
-				rabbit.style.transform = 'translateX(80%) rotate(360deg)';
-			});
+
 		</script>
 		<script>
 			const setFillHeight = () => {
