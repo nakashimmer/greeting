@@ -326,9 +326,9 @@
 			let dx = -1;
 			const hny=new Audio();
 			hny.src="hny.mp3";
-			hny.playbackRate=3;
+			hny.playbackRate=1;
 			rabbit.addEventListener('click', () => {
-				hny.pause();
+				//hny.pause();
 				hny.currentTime = 0;
 				hny.play();
 				if (dx === 1) {
