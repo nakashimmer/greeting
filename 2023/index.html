@@ -323,23 +323,19 @@
 		<footer>From:<small><a target="_blank" href="https://www.facebook.com/NakashimaShunji/">なかしまぁ先生</a></small></footer>
 		<script>
 			const rabbit = document.getElementById('rabbit');
-			let dx = -1;
+			let dx = 0.5;
 			const hny=new Audio();
 			hny.src="hny.mp3";
 			hny.playbackRate=1;
+			const str=["translateX(80%) rotate(360deg)", "translateX(-80%) rotate(-360deg)"]
 			rabbit.addEventListener('click', () => {
 				//hny.pause();
 				hny.currentTime = 0;
 				hny.play();
-				if (dx === 1) {
-					rabbit.style.transform = "translateX(80%) rotate(360deg)";
-					dx = -1;
-				}
-				else {
-					rabbit.style.transform = "translateX(-80%) rotate(-360deg)";
-					dx = 1;
-
-				}
+				
+				rabbit.style.transform = str[dx+0.5];
+				dx *= -1;
+				
 			});
 
 		</script>
@@ -349,10 +345,8 @@
 				document.documentElement.style.setProperty('--vh', `${vh}px`);
 			}
 
-			// 画面のサイズ変動があった時に高さを再計算する
 			window.addEventListener('resize', setFillHeight);
 
-			// 初期化
 			setFillHeight();
 		</script>
 	</body>
