@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Google Analytics -->
+		<script src="../ga.js"></script>
 		<meta charset="utf-8">
 		<title>2023 Happy New Year</title>
-
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
@@ -330,7 +331,7 @@
 			hny.src = "hny.mp3";
 			hny.playbackRate = 1;
 			const str = [
-				"translateX(80%) rotate(360deg)", 
+				"translateX(80%) rotate(360deg)",
 				"translateX(-80%) rotate(-360deg)"
 			];
 			rabbit.addEventListener('click', () => {
@@ -357,11 +358,11 @@
 		<script>
 			const screen = document.getElementById('screen');
 			const now = new Date();
-			let y=now.getFullYear();
-			if(y=2022){
+			let y = now.getFullYear();
+			if (y = 2022) {
 				screen.innerHTML = "2023 もよろしく<br> 🎍⛩️🍱🦐🍣🍥🍶🍾㊗🗻🦅🍆<br> おねがいします!";
 			}
-				
+
 		</script>
 	</body>
 </html>
