@@ -55,15 +55,14 @@
 			<p><small>(c)なかしまぁ先生</small></p>
 		</div>
 		<script>
-
+			//初期設定
 			const canvas = document.getElementById("canvas");
 			const ctx = canvas.getContext("2d");
-
 			const times = 13;
 			ctx.lineWidth = 2;
-
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+			//起動
 			setTimeout(
 				() => {
 				//	makeDragon(0, 250+3, 400+3, 350+3, 100+3, "gray")();
@@ -74,6 +73,7 @@
 					makeDragon(0, 350, 100, 250, 400, "green")();
 					makeDragon(0, 510, 110, 550, 50, "red")();
 				}, 1000);
+
 			//描画の開始
 			function makeDragon(n, x1, y1, x2, y2, color) {
 				ctx.fillStyle = "rgba(137, 189, 222, 0.2)";
