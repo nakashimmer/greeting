@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>辰年</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: rgba(137, 189, 222);
+			}
+
+			h1 {
+				color: white;
+				font-size: 100px;
+				font-family: serif;
+				text-align: center;
+			}
+
+			#gasho {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				width: 400px;
+				height: 600px;
+			}
+
+			canvas {
+				display: block;
+			}
+
+			p {
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="gasho">
+			<h1>賀正</h1>
+			<canvas id="canvas" width="400" height="400"></canvas>
+			<p>ドラゴンフラクタル図形</p>
+		</div>
+		<script>
+			const canvas = document.getElementById("canvas");
+			const ctx = canvas.getContext("2d");
+
+			const times = 15;
+			ctx.lineWidth = 1;
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			start(0, 150, 300, 250, 100, "white")();
+			start(0, 250, 100, 150, 300, "green")();
+			start(0, 360, 110, 385, 100, "red")();
+
+			//描画の開始
+			function start(n, x1, y1, x2, y2, color) {
+				ctx.fillStyle = "rgba(137, 189, 222, 0.1)";
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+				return () => {
+					dragonDraw(ctx, n, x1, y1, x2, y2, false, color);
+					if (n < times) {
+						setTimeout(start(n + 1, x1, y1, x2, y2, color), 500);
+					}
+				}
+			};
+
+			//ドラゴンの配置と描画
+			function dragonDraw(ctx, n, x1, y1, x2, y2, dir, color) {
+				if (n === 0) {
+					lineDraw(ctx, x1, y1, x2, y2, color); return;
+				}
+
+				let dx = (x2 - x1) / 2;
+				let dy = (y2 - y1) / 2;
+				let cx = x2 - dx + (dir ? dy : -dy);
+				let cy = y2 - dy + (dir ? -dx : dx);
+
+				if (n === 1) {
+					lineDraw(ctx, x1, y1, x2, y2, color, cx, cy); return;
+				}
+				else {
+					dragonDraw(ctx, n - 1, x1, y1, cx, cy, true, color);
+					dragonDraw(ctx, n - 1, cx, cy, x2, y2, false, color);
+				}
+			}
+
+			//線の描画
+			function lineDraw(ctx, x1, y1, x2, y2, color, cx, cy) {
+				ctx.beginPath();
+				ctx.moveTo(x1, y1);
+				if (cx) {
+					ctx.lineTo(cx, cy);
+				}
+				ctx.lineTo(x2, y2);
+				ctx.strokeStyle = color;
+				ctx.stroke();
+			}
+
+		</script>
+	</body>
+</html>
