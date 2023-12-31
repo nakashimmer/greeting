@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>辰年</title>
+		<title>2024辰年</title>
 		<style>
 			* {
 				margin: 0;
@@ -15,7 +15,7 @@
 
 			h1 {
 				color: white;
-				font-size: 100px;
+				font-size: 60px;
 				font-family: serif;
 				text-align: center;
 			}
@@ -28,8 +28,8 @@
 				right: 0;
 				bottom: 0;
 				margin: auto;
-				width: 400px;
-				height: 600px;
+				width: 600px;
+				height: 700px;
 			}
 
 			canvas {
@@ -40,35 +40,48 @@
 				color: white;
 				text-align: center;
 			}
+			a{
+				color:white;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="gasho">
-			<h1>賀正</h1>
-			<canvas id="canvas" width="400" height="400"></canvas>
-			<p>ドラゴンフラクタル図形。辰年だけに</p>
+			<h1>Happy New Year!</h1>
+			<canvas id="canvas" width="600" height="500"></canvas>
+			<p><a href="https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E6%9B%B2%E7%B7%9A" target="_blank">ドラゴンフラクタル図形</a>、辰年だけに</p>
+			<p>今年もよろしくおねがいします</p>
+			<p><small>(c)なかしまぁ先生</small></p>
 		</div>
 		<script>
+
 			const canvas = document.getElementById("canvas");
 			const ctx = canvas.getContext("2d");
 
-			const times = 15;
-			ctx.lineWidth = 1;
+			const times = 13;
+			ctx.lineWidth = 2;
 
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			start(0, 150, 300, 250, 100, "white")();
-			start(0, 250, 100, 150, 300, "green")();
-			start(0, 360, 110, 385, 100, "red")();
 
+			setTimeout(
+				() => {
+				//	makeDragon(0, 250+3, 400+3, 350+3, 100+3, "gray")();
+				//	makeDragon(0, 350+3, 100+3, 250+3, 400+3, "gray")();
+				//	makeDragon(0, 510+3, 110+3, 550+3, 50+3, "gray")();
+
+					makeDragon(0, 250, 400, 350, 100, "white")();
+					makeDragon(0, 350, 100, 250, 400, "green")();
+					makeDragon(0, 510, 110, 550, 50, "red")();
+				}, 1000);
 			//描画の開始
-			function start(n, x1, y1, x2, y2, color) {
-				ctx.fillStyle = "rgba(137, 189, 222, 0.1)";
+			function makeDragon(n, x1, y1, x2, y2, color) {
+				ctx.fillStyle = "rgba(137, 189, 222, 0.2)";
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 				return () => {
 					dragonDraw(ctx, n, x1, y1, x2, y2, false, color);
 					if (n < times) {
-						setTimeout(start(n + 1, x1, y1, x2, y2, color), 500);
+						setTimeout(makeDragon(n + 1, x1, y1, x2, y2, color), 1000);
 					}
 				}
 			};
