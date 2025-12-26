@@ -16,7 +16,11 @@
 		<!-- Viewport -->
 		<meta name="viewport" content="width=1000">
 		<!-- Font -->
-		<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Old+Mincho&display=swap"
+			rel="stylesheet">
 		<style>
 			/* Reset */
 			* {
@@ -42,7 +46,9 @@
 				font-size: 25vw;
 				line-height: 90vh;
 				color: red;
-				font-family: serif;
+				font-family: "Zen Old Mincho", serif;
+				font-weight: 900;
+				font-style: normal;
 				text-align: center;
 			}
 
@@ -54,7 +60,6 @@
 				width: calc(100% - 80px);
 				height: 100px;
 				text-align: center;
-				
 				font-family: 'Hachi Maru Pop', cursive;
 				font-weight: bold;
 				line-height: 1.2;
@@ -85,7 +90,6 @@
 				width: 500px;
 				height: 500px;
 				animation: wrapStory 10s ease-in-out 1s both;
-				
 				will-change: transform;
 				-webkit-box-reflect: below 10px linear-gradient(transparent, white);
 			}
@@ -106,7 +110,7 @@
 				overflow: hidden;
 				border-radius: inherit;
 				background:
-					conic-gradient(#762f07  5%, transparent 8% 92%, #762f07  95%),
+					conic-gradient(#762f07 5%, transparent 8% 92%, #762f07 95%),
 					radial-gradient(circle at 50% 100%, white 30%, #CD853F 31%);
 			}
 
@@ -140,7 +144,7 @@
 				width: 55px;
 				height: 60px;
 				border-radius: 30px;
-				background: radial-gradient(circle at 40% 40%, white 30%, black  31%);
+				background: radial-gradient(circle at 40% 40%, white 30%, black 31%);
 				animation: eyeStory 0.2s linear 11s 4 alternate both;
 				will-change: transform;
 			}
@@ -159,7 +163,7 @@
 				top: 220px;
 				width: 40px;
 				height: 20px;
-				background: #762f07 ;
+				background: #762f07;
 				border-radius: 50%;
 			}
 
@@ -183,7 +187,7 @@
 				z-index: -1;
 				border-radius: 100px;
 				background:
-					linear-gradient(#762f07  5%, transparent 20%),
+					linear-gradient(#762f07 5%, transparent 20%),
 					radial-gradient(circle at center 200px, white 30%, #CD853F 31%);
 			}
 
@@ -229,12 +233,12 @@
 				width: 120px;
 				height: 50px;
 				border-radius: 0% 0% 1000% 0%;
-				background: radial-gradient(at top left, #762f07  50%, transparent 60%);
+				background: radial-gradient(at top left, #762f07 50%, transparent 60%);
 				transform-origin: left;
 				animation: tailStory 0.2s linear 12s 4 alternate both;
 				will-change: transform;
 				z-index: -2;
-				rotate:-10deg;
+				rotate: -10deg;
 			}
 
 			/* Profile image */
