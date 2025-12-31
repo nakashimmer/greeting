@@ -340,7 +340,7 @@
 			<div class="title">謹賀新年</div>
 			<div class="msg m1">はっぴーにゅーいやー！</div>
 			<div class="msg m2"> 2026もよろしく！<br>
-				<a href="https://www.facebook.com/nakashimmer">
+				<a href="#" id="anchor">
 					<img src="nakashima.jpg" alt="nakashima" id="nakashima">
 				</a>
 			</div>
@@ -362,8 +362,14 @@
 			</div>
 		</div>
 		<script>
+			const anchor = document.getElementById("anchor");
 			let param = location.search;
-			document.write(param);	
+			console.log(param);
+			if (param === "?w") {
+				anchor.href = "https://www.facebook.com/nakashimashunji";
+			} else {
+				anchor.href = "https://www.facebook.com/nakashimmer";
+			}
 		</script>
 	</body>
 </html>
